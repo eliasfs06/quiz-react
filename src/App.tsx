@@ -36,12 +36,11 @@ function App() {
 
   return (
     <div className="d-flex align-items-center justify-content-center" style={{ height: "100vh", backgroundColor: "azure" }}>
-      <div className="card text-center shadow" style={{ width: "600px", height: "500px" }}>
+      <div className="card text-center shadow" style={{ width: "800px", height: "700px" }}>
         <div className="card-body d-flex flex-column justify-content-center">
           <h1 className="mt-4 mb-4">Quiz App</h1>
           {!quizStarted && !quizFinished && <QuizSetup startQuiz={startQuiz} />}
           {quizStarted && selectedQuestions.length > 0 && <Quiz questions={selectedQuestions} finishQuiz={finishQuiz} />}
-          {quizStarted && selectedQuestions.length === 0 && <p>Carregando perguntas...</p>}
           {quizFinished && <Result score={selectedQuestions.length === 0 ? 0 : selectedQuestions.length} restartQuiz={restartQuiz} />}
           {(quizFinished || !quizStarted) && <Ranking results={results} />}
         </div>

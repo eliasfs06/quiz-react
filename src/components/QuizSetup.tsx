@@ -42,7 +42,7 @@ function QuizSetup({ startQuiz }: QuizSetupProps) {
       <div className="card-body">
         <h4 className="card-title mb-3">Setup do Quiz</h4>
         <div className="form-group">
-          <label>Seu Nome:</label>
+          <label>Username:</label>
           <input
             type="text"
             className="form-control mt-1"
@@ -51,15 +51,16 @@ function QuizSetup({ startQuiz }: QuizSetupProps) {
           />
         </div>
         <div className="form-group">
-          <label>Número de perguntas:</label>
+          <label>Number of questions:</label>
           <input
             type="number"
             className="form-control mt-1"
             value={numQuestions}
+            min={1}
             onChange={(e) => setNumQuestions(Number(e.target.value))}
           />
         </div>
-        <button className="btn btn-primary mt-3" onClick={handleStart}>Iniciar</button>
+        <button className="btn btn-primary mt-3" onClick={handleStart}>Start</button>
       </div>
     </div>
   );
